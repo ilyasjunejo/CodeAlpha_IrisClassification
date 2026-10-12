@@ -1,284 +1,67 @@
-# CodeAlpha Data Science Internship Projects
+# Iris Flower Classification
 
-This repository contains **2 Data Science Machine Learning projects** completed as part of the **CodeAlpha Internship Program**.
+A reproducible beginner-friendly machine-learning project that compares classification models on scikit-learn's built-in Iris dataset.
 
----
+## What it does
 
-## 📋 Projects Overview
+The script loads the Iris dataset, explores feature distributions and correlations, trains three classifiers, compares their held-out test accuracy, prints classification metrics, and saves visualizations.
 
-### Project 1: Iris Flower Classification 🌸
-**Objective:** Build a machine learning classification model to predict iris flower species based on measurements.
+### Models compared
 
-**Dataset:** Iris Dataset (150 samples, 4 features, 3 classes)
+- Logistic Regression with feature scaling
+- Random Forest Classifier
+- Support Vector Machine with feature scaling
 
-**Key Features:**
-- ✅ Exploratory Data Analysis (EDA) with visualizations
-- ✅ Data preprocessing and feature scaling
-- ✅ Multiple classification algorithms (Logistic Regression, Random Forest, SVM)
-- ✅ Model comparison and evaluation
-- ✅ Confusion matrix and classification metrics
-- ✅ Accuracy: **95%+** on test data
+The script uses a stratified 80/20 train/test split with a fixed random seed. Results can vary with different data splits or settings; the script prints the actual scores when run instead of promising a fixed accuracy.
 
-**Files:**
-- `iris_classification.py` - Main implementation
-- `iris_distributions.png` - Feature distributions
-- `iris_correlation.png` - Correlation heatmap
-- `iris_confusion_matrix.png` - Model confusion matrix
-- `iris_model_comparison.png` - Model performance comparison
+## Visualizations
 
----
+Running the script generates:
 
-### Project 2: Car Price Prediction 🚗
-**Objective:** Build a regression model to predict car prices based on vehicle characteristics.
+- `iris_distributions.png` — distributions of the four flower measurements
+- `iris_correlation.png` — correlations between numeric features
+- `iris_confusion_matrix.png` — confusion matrix for the best model on this test split
+- `iris_model_comparison.png` — comparison of test-set accuracy
+- `iris_pairplot.png` — feature-pair relationships by species
 
-**Dataset:** Car features dataset (200 samples, 9 features)
+## Run locally
 
-**Key Features:**
-- ✅ Comprehensive EDA with scatter plots and box plots
-- ✅ Feature engineering and encoding
-- ✅ Multiple regression models (Linear, Ridge, Random Forest, Gradient Boosting)
-- ✅ Cross-validation and hyperparameter tuning
-- ✅ Feature importance analysis
-- ✅ R² Score: **0.92+** on test data
-- ✅ MAE: **<$3,000** average prediction error
+Python 3.10+ is recommended.
 
-**Files:**
-- `car_price_prediction.py` - Main implementation
-- `car_eda.png` - Exploratory data analysis visualizations
-- `car_correlation.png` - Feature correlation matrix
-- `car_feature_importance.png` - Feature importance ranking
-- `car_model_performance.png` - Comprehensive performance evaluation
-
----
-
-## 🛠️ Technologies & Libraries
-
-**Languages:** Python 3.8+
-
-**Key Libraries:**
-- `pandas` - Data manipulation and analysis
-- `numpy` - Numerical computing
-- `matplotlib` - Data visualization
-- `seaborn` - Statistical visualizations
-- `scikit-learn` - Machine learning algorithms
-- `sklearn.preprocessing` - Data preprocessing and scaling
-- `sklearn.model_selection` - Train/test splitting and cross-validation
-
----
-
-## 📊 Machine Learning Concepts Covered
-
-### Classification (Iris Project)
-1. **Data Preprocessing**
-   - Dataset loading and exploration
-   - Missing value handling
-   - Feature scaling (StandardScaler)
-
-2. **Classification Algorithms**
-   - Logistic Regression
-   - Random Forest Classifier
-   - Support Vector Machine (SVM)
-
-3. **Model Evaluation**
-   - Accuracy, Precision, Recall, F1-Score
-   - Confusion Matrix
-   - Classification Report
-   - Cross-validation
-
-4. **Exploratory Data Analysis**
-   - Feature distributions
-   - Correlation analysis
-   - Class balance assessment
-
-### Regression (Car Price Project)
-1. **Data Preprocessing**
-   - Categorical encoding (LabelEncoder)
-   - Feature scaling (StandardScaler)
-   - Train/test splitting
-
-2. **Regression Algorithms**
-   - Linear Regression
-   - Ridge Regression
-   - Random Forest Regressor
-   - Gradient Boosting Regressor
-
-3. **Model Evaluation**
-   - R² Score
-   - Mean Absolute Error (MAE)
-   - Root Mean Squared Error (RMSE)
-   - Residual analysis
-
-4. **Feature Analysis**
-   - Feature importance ranking
-   - Correlation analysis
-   - Scatter plot relationships
-
----
-
-## 🚀 How to Run the Projects
-
-### Prerequisites
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
+git clone https://github.com/ilyasjunejo/CodeAlpha_IrisClassification.git
+cd CodeAlpha_IrisClassification
+python -m venv .venv
 ```
 
-### Running Iris Classification
-```bash
+Activate the environment, then install dependencies:
+
+**Windows**
+```powershell
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
 python iris_classification.py
 ```
 
-**Output:**
-- Console output with detailed metrics
-- 4 PNG visualization files
-- Model performance summary
-
-### Running Car Price Prediction
+**macOS / Linux**
 ```bash
-python car_price_prediction.py
+source .venv/bin/activate
+pip install -r requirements.txt
+python iris_classification.py
 ```
 
-**Output:**
-- Console output with feature importance
-- 4 PNG visualization files
-- Model comparison and predictions
+## Tech stack
 
----
+Python, pandas, Matplotlib, Seaborn, and scikit-learn.
 
-## 📈 Project Results
+## Learning objectives
 
-### Iris Classification
-| Model | Accuracy | Precision | Recall | F1-Score |
-|-------|----------|-----------|--------|----------|
-| Logistic Regression | 96.67% | 0.9667 | 0.9667 | 0.9667 |
-| Random Forest | **100%** | **1.0000** | **1.0000** | **1.0000** |
-| SVM | 96.67% | 0.9667 | 0.9667 | 0.9667 |
+Practice train/test splitting, feature scaling, classification, model comparison, confusion matrices, precision, recall, F1-score, and exploratory data analysis.
 
-**Best Model:** Random Forest Classifier (100% accuracy on test set)
+## Dataset and limitations
 
-### Car Price Prediction
-| Model | R² Score | MAE | RMSE |
-|-------|----------|-----|------|
-| Linear Regression | 0.85 | $4,200 | $5,100 |
-| Ridge Regression | 0.87 | $3,900 | $4,800 |
-| Random Forest | 0.91 | $2,800 | $3,600 |
-| Gradient Boosting | **0.93** | **$2,400** | **$3,100** |
+The Iris dataset is a small, classic educational dataset with 150 samples, four numeric features, and three species. It is useful for learning but is not representative of the complexity of most real-world classification tasks.
 
-**Best Model:** Gradient Boosting Regressor (R² = 0.93, MAE = $2,400)
+## Author
 
----
-
-## 🔍 Key Insights
-
-### Iris Classification
-- Setosa flowers are highly distinguishable from other species
-- Petal measurements are stronger predictors than sepal measurements
-- Random Forest achieved perfect classification due to clear feature separation
-- The model generalizes well with no signs of overfitting
-
-### Car Price Prediction
-- **Horsepower** is the strongest price predictor (highest feature importance)
-- **Vehicle age** has significant negative impact on price
-- **Mileage** shows strong negative correlation with price
-- **Year of manufacture** positively correlates with market value
-- Gradient Boosting outperformed simpler models by capturing non-linear relationships
-
----
-
-## 📝 Project Structure
-
-```
-CodeAlpha_IrisClassification/
-├── iris_classification.py
-├── iris_distributions.png
-├── iris_correlation.png
-├── iris_confusion_matrix.png
-├── iris_model_comparison.png
-└── README.md
-
-CodeAlpha_CarPricePrediction/
-├── car_price_prediction.py
-├── car_eda.png
-├── car_correlation.png
-├── car_feature_importance.png
-├── car_model_performance.png
-└── README.md
-```
-
----
-
-## 🎓 Learning Outcomes
-
-Through these projects, I have demonstrated:
-
-1. **Data Science Skills**
-   - ✅ Data loading, cleaning, and preprocessing
-   - ✅ Exploratory Data Analysis (EDA)
-   - ✅ Feature engineering and selection
-   - ✅ Model building and training
-   - ✅ Performance evaluation and metrics
-
-2. **Machine Learning Skills**
-   - ✅ Supervised learning (Classification & Regression)
-   - ✅ Model comparison and selection
-   - ✅ Hyperparameter tuning
-   - ✅ Cross-validation techniques
-   - ✅ Feature importance analysis
-
-3. **Python & Libraries**
-   - ✅ Advanced pandas operations
-   - ✅ NumPy array operations
-   - ✅ Scikit-learn ML pipeline
-   - ✅ Matplotlib/Seaborn visualization
-   - ✅ Code organization and documentation
-
-4. **Problem Solving**
-   - ✅ Real-world problem analysis
-   - ✅ Algorithm selection
-   - ✅ Performance optimization
-   - ✅ Insight generation from data
-
----
-
-## 🔗 Repository Information
-
-**Repository:** CodeAlpha_IrisClassification & CodeAlpha_CarPricePrediction
-
-**Author:** Data Science Intern - CodeAlpha
-
-**Internship Program:** CodeAlpha Data Science Internship
-
-**Completion Date:** 2024
-
-**Contact:** 
-- Website: www.codealpha.tech
-- Email: services@codealpha.tech
-
----
-
-## 📚 References & Resources
-
-- Scikit-learn Documentation: https://scikit-learn.org/
-- Pandas Documentation: https://pandas.pydata.org/
-- Matplotlib Tutorials: https://matplotlib.org/
-- Machine Learning Theory: https://www.coursera.org/learn/machine-learning/
-
----
-
-## ✅ Submission Checklist
-
-- [x] Code completed and tested
-- [x] All visualizations generated
-- [x] GitHub repositories created
-- [x] README documentation prepared
-- [x] LinkedIn post prepared with project explanation
-- [x] GitHub links ready for submission
-
----
-
-## 📞 Questions & Support
-
-For any questions regarding these projects or the implementation details, please refer to the inline code comments and console output explanations in each script.
-
----
-
-**© 2024 CodeAlpha Data Science Internship**
+**M. Ilyas Junejo** · [GitHub profile](https://github.com/ilyasjunejo)
